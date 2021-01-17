@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/bookListFragment">
+
+    <fragment
+        android:id="@+id/bookListFragment"
+        android:name="com.example.readbooks.BookListFragment"
+        android:label="BookListFragment"
+        tools:layout="@layout/book_list_fragment">
+        <action
+            android:id="@+id/action_bookListFragment_to_bookFragment"
+            app:destination="@id/bookFragment" />
+        <action
+            android:id="@+id/action_bookListFragment_to_newBookFragment"
+            app:destination="@id/newBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookFragment"
+        android:name="com.example.readbooks.BookFragment"
+        android:label="BookFragment"
+        tools:layout="@layout/book_fragment">
+        <action
+            android:id="@+id/action_bookFragment_to_bookListFragment"
+            app:destination="@id/bookListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newBookFragment"
+        android:name="com.example.readbooks.NewBookFragment"
+        android:label="NewBookFragment"
+        tools:layout="@layout/new_book_fragment"
+        >
+        <action
+            android:id="@+id/action_newBookFragment_to_bookListFragment"
+            app:destination="@id/bookListFragment" />
+    </fragment>
+</navigation>
